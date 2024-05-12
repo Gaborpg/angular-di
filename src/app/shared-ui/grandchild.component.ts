@@ -11,7 +11,7 @@ import { CounterService } from '../services/counter.service';
           (click)="counter.increase()">increase</button>
 </div>
   `,
-  providers:[CounterService]
+  //providers:[CounterService]
 })
 export class GrandChildComponent {
   constructor(public counter: CounterService) {}

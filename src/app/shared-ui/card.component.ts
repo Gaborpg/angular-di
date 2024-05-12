@@ -12,7 +12,7 @@ import { CounterService } from '../services/counter.service';
   <ng-content></ng-content>
 </div>
 `,
-providers:[CounterService]
+//providers:[CounterService]
 //viewProviders: [CounterService],
 })
 export class CardComponent {

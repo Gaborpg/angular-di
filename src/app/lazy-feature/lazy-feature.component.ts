@@ -14,18 +14,17 @@ import { CounterService } from '../services/counter.service';
   </div>
 </div>
   `,
-  providers: [CounterService]
+ // providers: [CounterService]
 })
 export class LazyFeatureComponent {
-    counter: CounterService;
+    //counter!: CounterService;
 
-    constructor(@Self() counter: CounterService,
-                @Optional() @SkipSelf() @Host() parentCounter: CounterService) {
+    //@Self() counter: CounterService,
+    //@Optional() @SkipSelf() @Host() 
+    constructor(public counter: CounterService) {
   
-        if(parentCounter) {
-          this.counter = parentCounter;
-        } else {
-          this.counter = counter
-        }
+      //  if(parentCounter) {
+      //    this.counter = parentCounter;
+       // }
     }
 }

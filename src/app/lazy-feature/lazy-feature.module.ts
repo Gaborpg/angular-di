@@ -14,7 +14,7 @@ import { CounterService } from '../services/counter.service';
         {path: '', pathMatch: 'full', component: LazyFeatureComponent}
       ])
   ],
-  providers:[CounterService]
+  //providers:[CounterService]
   
 })
 export class LazyFeatureModule {

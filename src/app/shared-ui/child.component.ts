@@ -12,7 +12,7 @@ import { CounterService } from '../services/counter.service';
   <app-grandchild></app-grandchild>
   </div>
   `,
-  providers:[CounterService]
+  //providers:[CounterService]
 })
 export class ChildComponent {
   constructor(public counter: CounterService) {}
