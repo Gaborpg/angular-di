@@ -1,5 +1,16 @@
-import {Component} from '@angular/core';
+import {Component, Inject, InjectionToken, Injector, Optional, inject} from '@angular/core';
+import { CounterService } from '../services/counter.service';
 
+//{
+// provide ===> Key,
+// useExisting ==> instraction
+// useFactory ==> function instraction
+//}
+//{
+//  provide: CounterService,
+//  useClass: CounterService
+//}
+//const KEY = new InjectionToken("CounterService");
 @Component({
   selector: 'app-eager-feature',
   template: `
@@ -10,9 +21,19 @@ import {Component} from '@angular/core';
       <app-card>
           <app-child></app-child>
       </app-card>
+      {{counter.count}}
+      <button class="btn btn-primary btn-sm" 
+      (click)="counter.increase()">increase</button>
   </div>
 </div>
   `,
-  providers:[]
+  providers: []
 })
-export class EagerFeatureComponent {}
+export class EagerFeatureComponent {
+  //{provide: CounterService, useClass: CounterService}
+  inject: Injector = Injector.create({ providers: [], parent: inject(Injector) });
+  //counter = inject(CounterService);
+  public get counter() {
+    return this.inject.get(CounterService)
+  }
+}
