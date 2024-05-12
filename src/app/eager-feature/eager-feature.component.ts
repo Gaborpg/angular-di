@@ -1,7 +1,5 @@
 import {Component} from '@angular/core';
-import { SharedUiModule } from '../shared-ui/shared-ui.module';
 import { CommonModule } from '@angular/common';
-import { CounterService } from '../Services/counter.service';
 
 @Component({
   selector: 'app-eager-feature',
@@ -16,11 +14,6 @@ import { CounterService } from '../Services/counter.service';
   </div>
 </div>
   `,
-  standalone: true,
-  imports: [
-    CommonModule,
-    SharedUiModule
-  ],
-  providers:[CounterService]
+  providers:[]
 })
 export class EagerFeatureComponent {}

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CounterService } from '../Services/counter.service';
+import { CounterService } from '../services/counter.service';
 
 @Component({
   selector: 'app-grandchild',
